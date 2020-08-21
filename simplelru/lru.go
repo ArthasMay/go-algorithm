@@ -52,7 +52,7 @@ func (c *LRU) Add(key, value interface{}) (evicted bool) {
 
 	evict := c.envictList.Len() > c.size
 	if evict {
-
+		c.removeOldest()
 	}
 	return evict
 }
